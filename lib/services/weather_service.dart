@@ -18,6 +18,7 @@ class WeatherService {
     } on DioException catch (e) {
       final errorMessage = e.response?.data['error']['message'] ??
           'oops there is an error , try again later';
+
       throw Exception(errorMessage);
     } catch (e) {
       throw Exception('oops there is an error , try again later');
