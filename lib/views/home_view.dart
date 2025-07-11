@@ -33,11 +33,13 @@ class HomeView extends StatelessWidget {
           if (state is WeatherInitialState) {
             return const NoWeatherBody();
           } else if (state is WeatherLoadedState) {
-            return const WeatherInfoBody();
+            return WeatherInfoBody(
+              weatherModel: state.weatherModel,
+            );
           } else {
             return const Center(
               child: Text(
-                'Failed to load weather data. Please try again.',
+                'Error fetching weather data',
                 style: TextStyle(fontSize: 18, color: Colors.red),
               ),
             );
