@@ -13,7 +13,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return const SearchView();
+          }));
+        },
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
